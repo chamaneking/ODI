@@ -1,0 +1,18 @@
+[Unit]
+Description=ODI - WebLogic Node Manager
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+User=oracle
+Group=oinstall
+LimitNOFILE=65536
+TimeoutStartSec=180
+TimeoutStopSec=120
+ExecStart=/progiciel/oracle/scripts/nm_start.sh
+ExecStop=/progiciel/oracle/scripts/nm_stop.sh
+
+[Install]
+WantedBy=multi-user.target

@@ -1,1 +1,18 @@
-test
+[Unit]
+Description=ODI - WebLogic AdminServer
+After=odi-nodemanager.service
+Requires=odi-nodemanager.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+User=oracle
+Group=oinstall
+LimitNOFILE=65536
+TimeoutStartSec=700
+TimeoutStopSec=300
+ExecStart=/progiciel/oracle/scripts/admin_start.sh
+ExecStop=/progiciel/oracle/scripts/admin_stop.sh
+
+[Install]
+WantedBy=multi-user.target

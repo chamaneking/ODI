@@ -1,0 +1,18 @@
+[Unit]
+Description=ODI - Managed Server ODI_server1
+After=odi-adminserver.service
+Requires=odi-adminserver.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+User=oracle
+Group=oinstall
+LimitNOFILE=65536
+TimeoutStartSec=1000
+TimeoutStopSec=300
+ExecStart=/progiciel/oracle/scripts/odi_start.sh
+ExecStop=/progiciel/oracle/scripts/odi_stop.sh
+
+[Install]
+WantedBy=multi-user.target
