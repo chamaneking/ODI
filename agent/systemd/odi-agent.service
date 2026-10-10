@@ -1,1 +1,18 @@
-tgest
+[Unit]
+Description=ODI Agent - OracleDIAgent1
+After=odi-agent-nodemanager.service
+Requires=odi-agent-nodemanager.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+User=oracle
+Group=oinstall
+LimitNOFILE=65536
+TimeoutStartSec=300
+TimeoutStopSec=300
+ExecStart=/progiciel/oracle/scripts/agent_start.sh
+ExecStop=/progiciel/oracle/scripts/agent_stop.sh
+
+[Install]
+WantedBy=multi-user.target
