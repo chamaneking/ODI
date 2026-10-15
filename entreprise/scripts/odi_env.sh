@@ -3,11 +3,11 @@
 export MW_HOME=/progiciel/oracle/product/middlewareODI12R21
 export JAVA_HOME=/progiciel/oracle/product/jdk/jdk1.8.0_202
 export DOMAIN_HOME=$MW_HOME/user_projects/domains/base_domain
-export ADMIN_HOST=sfxxxxxxx
+export ADMIN_HOST=xxxxxxx
 export ADMIN_PORT=7001
 export ADMIN_URL=t3://${ADMIN_HOST}:${ADMIN_PORT}
 export MS_NAME=ODI_server1
-export MS_HOST=sfxxxxxxx
+export MS_HOST=xxxxxxx
 export MS_PORT=8001
 export NM_PORT=5556
 export WLST_SEC=/home/oracle/.wlst
